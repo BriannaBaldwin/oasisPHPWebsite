@@ -1,0 +1,101 @@
+/***
+Original Author: Brianna Baldwin
+Date Created: 01/29/2021
+Version: 0.0
+Date Last Modified: 01/29/2021
+Modified by: Brianna Baldwin
+Modification log: 
+    01/29/2021 - Created newsletter.css | Added styling for newsletter.html | hover function for buttons
+    02/03/2021 - Added errorMsg class styling
+    02/05/2021 - Added desktop styling
+    02/16/2021 - Edited color scheme
+***/
+.newsletter body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f5f5;
+    margin: 0 auto;
+    width: 600px;
+    border: 3px solid #1687a7;
+    padding:15px 25px;
+}
+h1 {
+    color: #f6f5f5;
+    padding-top: 30px;
+    margin-top: 1px;
+    padding-bottom: 30px;
+    font-size: 32px;
+}
+form div {
+    margin-bottom: 1em;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+label {
+    display: inline-block;
+    width: 11em;
+    text-align: justify;
+    font-size: 25px;
+    color: #f6f5f5;
+}
+input {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+.textBox {
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+}
+
+.button {
+    height: 60px;
+    width: 140px;
+    font-size: 20px;
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    background-color: #276678;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #BCE1FD;
+    transition: .5s;
+    color: #f6f5f5;
+  }
+  .button:hover {
+    background-color: #50A5BD;
+    color: #f6f5f5;
+    border: 1px solid #276678;
+    transition: .5s;
+  }
+
+
+  /****** Desktop Styling ******/
+  @media screen and (min-width: 600px) {
+      h1 {
+          font-size: 40px;
+          text-align: center;
+      }
+      label {
+          font-size: 30px;
+      }
+      .textBox {
+          margin-left: 50px;
+      }
+      .errorMsg {
+          font-size: 25px;
+      }
+      .errorMsg::before {
+          padding: 50px;
+          content: "\a\a";
+      }
+      form {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 0px;
+        padding: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      main {
+          padding-bottom: 30px;
+      }
+  }

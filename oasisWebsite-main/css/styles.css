@@ -1,0 +1,417 @@
+/***
+Original Author: Brianna Baldwin
+Date Created: 01/27/2021
+Version: 0.0
+Date Last Modified: 02/17/2021
+Modified by: Brianna Baldwin
+Modification log: 
+    01/27/2021 - Created styles.css | Put styling for FAQs, Contacts, and Newsletter divs |
+    02/02/2021 - Edited faq styles to create acordian
+    02/03/2021 - Got rid of carousel styling and added slideshow styling
+    02/05/2021 - Added desktop styling
+    02/15/2021 - Back to Top button | Edited nav bar for desktop/mobile views
+    02/16/2021 - Edited color scheme
+    02/17/2021 - Made dolphin hambIcon spin | Added newsletter form styling
+    ***/
+
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+  
+/* Mobile Styles (500px or less) */
+/* Logo */
+#logo {
+    text-align: left;
+    border-bottom: #d3e0ea;
+}
+
+/****** Navbar ******/
+/* Style the navigation menu */
+nav {
+  background-color: #276678;
+}
+
+nav ul {
+list-style-type: none;
+text-align: center;
+}
+
+nav li {
+display: block;
+font-size: 25px;
+font-family: 'Yusei Magic', Arial, sans-serif;
+border-bottom: 0.5px solid #d3e0ea;
+}
+
+nav li a {
+display: block;
+color: #f6f5f5;
+padding: 0.5em 2em;
+text-decoration: none;
+}
+nav li a img {
+  height: 42px;
+  width: auto;
+  padding: 5px;
+  padding-bottom: 0px;
+}
+
+/* Dolphin Spin */
+ .rotate {
+  transition-duration: .5s;
+}
+.rotate:active {
+  transform: rotateZ(360deg);
+} 
+.rotateAgain {
+  transition-duration: .5s;
+}
+.rotateAgain:hover {
+  transform: rotateZ(360deg);
+} 
+
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.hambNav {
+    background: #276678;
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 4px 9px;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .topnav #myLinks a:hover {
+    background-color: #f6f5f5;
+    color: #276678;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .topnav .active {
+    background-color: #d3e0ea;
+    color: #276678;
+    text-align: left;
+    padding: 12.5px 20px;
+  }
+  header {
+    text-align: center;
+      font-family: 'Yusei Magic', Arial, sans-serif;
+      background-color: #d3e0ea; 
+}
+  
+/********* Body/Main Content **********/
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 5px solid #1687a7;
+}  
+
+main {
+      text-align: center;
+      font-family: 'Yusei Magic', Arial, sans-serif;
+      background-color: #d3e0ea;
+      margin-top: 0px;
+  }
+  footer {
+      font-family: 'Yusei Magic', Arial, sans-serif;
+      color: #f6f5f5;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #276678;
+  }
+  footer a {
+    color: #f6f5f5;
+  }
+
+  /******* Slideshow Styling *******/
+  #slideshow {
+    height: 500px;
+    padding-top: 15%;
+  }
+  #slideshow h1, h2, ul, p {
+	margin: 0;
+	padding: 0;
+}
+#slideshow h1 {
+	padding-bottom: .25em;
+	color: #276678;
+}
+#slideshow h2 {
+	font-size: 120%;
+	padding: .5em 0;
+  color: #276678;
+}
+#slideshow img {
+  height: 250px;
+  padding: 5px;
+  border: 5px solid #1687a7;
+}
+#slides img {
+	display: none;
+}
+
+  /******* Newsletter Styling *******/
+  .newsletterParallax {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/dolphins.jpg");
+    height: fit-content;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f6f5f5;
+    font-size: 20px;
+    padding-top: 25%;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 25%;
+  }
+  .newsletterParallax input {
+    height: 60px;
+  width: 140px;
+  font-size: 20px;
+  font-family: 'Yusei Magic', Arial, sans-serif;
+  background-color: #f6f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d3e0ea;
+  transition: .5s;
+  color: black;
+  }
+  .newsletterParallax input:hover {
+    background-color: #2296AC;
+    color: #f6f5f5;
+    border: 1px solid #f6f5f5;
+    transition: .5s;
+  }
+  .newsletterParallax .textBox {
+    height: 30px;
+    width: 180px;
+    font-size: 20px;
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    background-color: #f6f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d3e0ea;
+    transition: .5s;
+  }
+  .newsletterParallax .textBox:hover {
+    background-color: #2296AC;
+    color: #f6f5f5;
+    border: 1px solid #f6f5f5;
+    transition: .5s;
+  }
+  
+
+  /****** FAQs Styling ******/
+.faqs {
+  height: fit-content;
+  padding-bottom: 25%;
+}
+.faqs * {
+    margin: 0;
+    padding-top: 10px;
+}
+.faqs body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 550px;
+    margin: 0 auto;
+    padding: 15px 25px;
+}
+#faqs { 
+    padding-top: 25%;
+    color: #276678;
+}
+.faqs h2 {
+    font-size: 25px;
+    padding: .25em 0 .25em 25px;
+    cursor: pointer;
+    padding: 30px 0px 30px 30px;
+    background: url("../img/plus.png") no-repeat 5px center;
+    text-align: left;
+}
+.faqs h2.minus {
+  background: url("../img/minus.png") no-repeat 5px center;
+}
+.faqs a {
+    color: #276678;
+    text-decoration: none; 
+    transition: .7s;
+}
+.faqs a:hover { 
+  color: #1687a7; 
+  font-size: 28px;
+  transition: .7s;
+}
+.faqs div {
+    display: none;
+}
+.faqs ul {
+    padding-left: 45px;
+}
+.faqs li {
+    padding-bottom: .25em;
+}
+.faqs p {
+    padding: 1em;
+    font-size: 20px;
+    background-color: #f6f5f5;
+}
+.moreFacts {
+  display: none;
+}
+
+
+/******* Contact Styling *******/
+.contactParallax {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/peopleCleaningBeachDesktop.png");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f6f5f5;
+  font-size: 20px;
+  padding-top: 25%;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 25%;
+}
+.contactParallax h1 {
+  margin-top: 35%;
+}
+.contactParallax input {
+  height: 60px;
+  width: 140px;
+  font-size: 20px;
+  font-family: 'Yusei Magic', Arial, sans-serif;
+  background-color: #f6f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d3e0ea;
+  transition: .5s;
+}
+.contactParallax input:hover {
+  background-color: #2296AC;
+  color: #f6f5f5;
+  border: 1px solid #f6f5f5;
+  transition: .5s;
+}
+
+/* Back To Top Button */
+#top_button {
+  height: 40px;
+  width: 100px;
+  font-size: 14px;
+  font-family: 'Yusei Magic', Arial, sans-serif;
+  background-color: #f6f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d3e0ea;
+  transition: .5s;
+}
+#top_button:hover {
+  background-color: #2296AC;
+  color: #f6f5f5;
+  border: 1px solid #f6f5f5;
+  transition: .5s;
+}
+
+
+
+ /****** Desktop Styling ******/
+ @media screen and (min-width: 600px) {
+  h1 {
+    font-size: 50px;
+  }
+
+/****** Navbar ******/
+nav li.item {
+  border-top: none;
+  display: inline-block;
+}
+.topnav #myLinks {
+  display: inline-block;
+}
+.topnav a.hambNav {
+  display: none;
+}
+   /******* Slideshow Styling *******/
+  #slideshow {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: fit-content;
+  }
+  h2, h3 {
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  #slideshow h2 {
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  #slideshow img {
+    height: 400px;
+  }
+  /******* Newsletter Styling *******/
+  .newsletterParallax {
+    height: fit-content;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .newsletterParallax h1 {
+    margin-top: 0%;
+    margin-bottom: 5%;
+  }
+  #newsletter_button {
+    font-size: 35px;
+    height: auto;
+    width: auto;
+  }
+  .newsletterParallax .newsletter {
+    background-color: rgba(0, 0, 0, .4);
+  }
+  /****** FAQs Styling ******/
+  #faqs {
+    padding-top: 5%;
+  }
+  .faqs {
+    padding-bottom: 5%;
+    height: fit-content;
+  }
+  .faqs a {
+    font-size: 30px;
+  }
+  .faqs a:hover { 
+    color: #1687a7; 
+    font-size: 40px;
+    transition: .7s;
+  }
+  .faqs h3 {
+    padding: 1em;
+  }
+  .moreFacts {
+    display: inline;
+  }
+  /******* Contact Styling *******/
+  .contactParallax {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/peopleCleaningBeachDesktop.png");
+    padding-top: 15%;
+    padding-bottom: 15%;
+    height: fit-content;
+  }
+  .contactParallax h1 {
+    margin-top: 0%;
+  }
+
+}

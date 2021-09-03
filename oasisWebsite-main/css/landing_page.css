@@ -1,0 +1,185 @@
+/*
+*Original Author: Brianna Baldwin
+*Date Created: 01/22/2021
+*Version: 0.0
+*Date Last Modified: 02/17/2021
+*Modified by: Brianna Baldiwn
+*Modification log:   
+    01/26/2021 - Adjusted pictures/padding in parallaxes | Deleted opacity for body | Adjusted sizes of text
+    01/27/2021 - Added hover function to help button
+    02/05/2021 - Added desktop styling.
+    02/17/2021 - Edited color scheme | edited layout margins and footer
+*/
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+  
+/* Mobile Styles */
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 5px solid #1687a7;
+}  
+header {
+    text-align: center;
+      font-family: 'Yusei Magic', Arial, sans-serif;
+      background-color: #d3e0ea;
+}
+main {
+      text-align: center;
+      font-family: 'Yusei Magic', Arial, sans-serif;
+      background-color: #d3e0ea;
+  }
+
+
+  /* Happy Girl Parallax */
+  .parallax {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/happy_background02.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f6f5f5;
+    font-size: 40px;
+    padding-top: 25%;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 25%;
+  }
+  .parallax h1 {
+    margin-top: 1.5em;
+    font-size: 2em;
+  }
+  .parallax h3 {
+    font-size: 25px;
+  }
+
+
+  /* Facts Section */
+  .facts {
+    padding-top: 30px;
+    font-size: 20%;
+    color: #276678;
+  }
+  .facts p {
+    font-size: 20px;
+    padding-bottom: 20px;
+    display: block;
+  }
+  .facts img {
+    height: 70px;
+    width: 70px;
+  }
+  .column {
+    padding: 8px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .moreFacts {
+    display: none;
+  }
+  #middle {
+    background-color: #f6f5f5;
+  }
+
+
+  /* Ocean Animals Parallax */
+  .parallax_2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/turtle02.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f6f5f5;
+    padding-top: 25%;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 25%;
+  }
+  .parallax_2 h3 {
+    font-size: 35px;
+    padding-top: 25%;
+  }
+  #help_button {
+    background-color: #f6f5f5;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d3e0ea;
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    transition: .5s;
+  }
+  #help_button:hover {
+    background-color: #2296AC;
+    color: #f6f5f5;
+    border: 1px solid #f6f5f5;
+    transition: .5s;
+  }
+  footer {
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    color: #f6f5f5;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #276678;
+  }
+  footer a {
+    color: #f6f5f5;
+  }
+
+
+  /****** Desktop Styling ******/
+  @media screen and (min-width: 600px) {
+  /* Happy Girl Parallax */
+    .parallax {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/happy_background.jpg");
+      background-position-y: 0px;
+      padding-top: 10%;
+      padding-bottom: 10%;
+    }
+    .parallax h1 {
+      margin-top: 0%;
+      margin-bottom: 10%;
+      font-size: 4em;
+    }
+    .parallax h3 {
+      font-size: 1.5em;
+    }
+
+    /* Facts Parallax */
+    .row {
+      display: flex;
+    }
+    .column {
+      flex: 33.33%;
+      padding: 15px;
+    }
+    .moreFacts {
+      display: inline;
+    }
+    .facts h2 {
+      font-size: 50px;
+    }
+
+    /* Ocean Animals Parallax */
+    .parallax_2 {
+      padding-top: 10%;
+      padding-bottom: 10%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/turtle.jpg");
+    }
+    .parallax_2 h3 {
+      padding-top: 0%;
+      font-size: 60px;
+      padding-bottom: 20px;
+    }
+    #help_button {
+      font-size: 35px;
+    }
+
+    
+}

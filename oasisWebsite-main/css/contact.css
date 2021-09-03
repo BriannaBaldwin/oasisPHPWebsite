@@ -1,0 +1,186 @@
+/***
+Original Author: Brianna Baldwin
+Date Created: 01/29/2021
+Version: 0.0
+Date Last Modified: 02/17/2021
+Modified by: Brianna Baldwin
+Modification log: 
+    01/29/2021 - Created contact.css | Added styling for contact.html | hover function for buttons
+    02/03/2021 - Added errorMsg class styling
+    02/05/2021 - Added desktop styling
+    02/16/2021 - Edited color scheme 
+    02/17/2021 - Edited form layout
+***/
+
+.contact body {
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    background-color: #f6f5f5;
+    margin: 0 auto;
+    width: 600px;
+    border: 3px solid #1687a7;
+    padding:15px 25px;
+}
+h1 {
+    color: #276678;
+    padding-top: 30px;
+    margin-top: 0px;
+    padding-bottom: 30px;
+}
+form div {
+    margin-bottom: 0em;
+    padding-bottom: 40px;
+}
+label {
+    display: inline-block;
+    width: 11em;
+    text-align: left;
+    font-size: 25px;
+    color: #276678;
+}
+.flex-container {
+    padding-bottom: 0px;
+}
+.contact li {
+    list-style: none;
+    padding-bottom: 50px;
+}
+.topnav .active {
+    border-bottom: 2px solid #1687a7;
+}
+fieldset {
+    padding: 3%;
+    border-width: 0px;
+}
+input {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+.textBox {
+    font-size: 20px;
+}
+textarea {
+    height: 100px;
+    width: 200px;
+}
+span {
+    color: red;
+    font-size: 30px;
+}
+.errorMsg {
+    color: red;
+    font-size: 20px;
+}
+.errorMsg::before {
+    content: "\a";
+    white-space: pre;
+}
+.button {
+    height: 60px;
+    width: 140px;
+    font-size: 20px;
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    background-color: #276678;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #BCE1FD;
+    transition: .5s;
+    color: #f6f5f5;
+  }
+  .button:hover {
+    background-color: #50A5BD;
+    color: #f6f5f5;
+    border: 1px solid #276678;
+    transition: .5s;
+  }
+  .country select{
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    font-family: 'Yusei Magic', Arial, sans-serif;
+    background-color: #f6f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #BCE1FD;
+  }
+  .radio_buttons{
+    font-size: 23px;
+    color: #276678;
+  }
+  .terms {
+      font-size: 23px;
+      color: #276678;
+  }
+
+    /****** Desktop Styling ******/
+    @media screen and (min-width: 600px) {
+        form div {
+            margin-bottom: 0px;
+        }
+        h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+        label {
+            font-size: 30px;
+        }
+        #csLabel {
+            margin-right: 140px;
+        }
+        .textBox {
+            margin-left: 50px;
+            height: 30px;
+            width: 30%;
+        }
+        .errorMsg {
+            font-size: 25px;
+        }
+        .errorMsg::before {
+            padding: 0px;
+        }
+        form {
+          background-color: #f6f5f5;
+          margin-left: 25px;
+          margin-right: 25px;
+          margin-bottom: 0px;
+          padding: 50px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border: 1px solid #1687a7;
+        }
+        #country_selected {
+            font-size: 20px;
+        }
+        .radio_buttons {
+            display: block;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        .flex-child {
+            width: fit-content;
+            padding-left: 50px;
+        }  
+        .flex-child:first-child {
+            margin-right: 20px;
+        } 
+
+        #comments {
+            width: 400px; 
+            height: 200px;
+        }
+        main {
+            padding-bottom: 30px;
+        }
+        .contact_container{
+            list-style: none;
+            text-align: left;
+        }
+        .contact li {
+            padding-left: 50px;
+        }
+        .button_container {
+            padding-left: 45px;
+        }
+    }
