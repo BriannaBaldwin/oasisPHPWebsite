@@ -52,7 +52,7 @@ VALUES
     $statement->bindValue(':comments', $comments);
     $statement->execute();
     $statement->closeCursor();
-    echo "Fields: " . $email_address . $phone . $country_selected, $contact, $terms, $comments;
+//    echo "Fields: " . $email_address . $phone . $country_selected, $contact, $terms, $comments;
 }
 ?>
 <!-- Contact: 06-02, register 2.0 -->
