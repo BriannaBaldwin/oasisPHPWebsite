@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS form_submission
 	phone	VARCHAR(15) NOT NULL,
 	country VARCHAR(50) NOT NULL,
 	contact_by VARCHAR(50) NULL,
-	tos 	BIT(1) NOT NULL,	
+	tos 	tinyint NOT NULL,	
 	comments VARCHAR (999) NOT NULL,
 	submission_date DATETIME NOT NULL,
 	volunteer_id	INT NOT NULL,
