@@ -6,18 +6,11 @@
 //Modified by: Brianna Baldwin
 //Modification log:
 //   09/10/2021 - created admin.php | added php to collect and post messages for each assigned volunteer | added option to delete messages
-// Validate inputs
-$dsn = 'mysql:host=localhost;dbname=oasis'; //my db name
-$username = 'oasis_user';   //'my db username';
-$password = 'Pa$$w0rd';
+//   09/17/2021 - linked model database.php and volunteer.php files | deleted database link | add volunteer and visit functions | added nav links
 
-try {
-    $db = new PDO($dsn, $username, $password);
-} catch (PDOException $e) {
-    $error_message = $e->getMessage();
-    include('database_error.php');
-    exit();
-}
+require_once ('./model/database.php');
+require_once ('./model/volunteer.php');
+require_once ('./model/submission.php');
 
 //Check action; on initial load it is null
 $action = filter_input(INPUT_POST, 'action');
@@ -38,35 +31,15 @@ if ($action == 'list_submissions') {
     }
 
     try {
-//Get visit info for volunteer
-        $queryVolunteer = 'SELECT * FROM volunteer';
-        $statement1 = $db->prepare($queryVolunteer);
-        $statement1->execute();
-        $volunteers = $statement1;
-
-        $query2 = 'SELECT submission_id, submission_date, form_submission.email, comments, phone, contact_by, form_submission.volunteer_id
-                FROM form_submission
-                JOIN volunteer on form_submission.volunteer_id = volunteer.volunteer_id
-                WHERE volunteer.volunteer_id = :volunteer_id
-                ORDER BY submission_date';
-        $statement2 = $db->prepare($query2);
-        $statement2->bindValue(":volunteer_id", $volunteer_id);
-        $statement2->execute();
-        $submissions = $statement2;
-        // $statement2->closeCursor();
+        $volunteers = VolunteerDB::getVolunteerList();
+        $submissions = getSubmissionByEmp($volunteer_id);
     } catch (PDOException $e) {
         $error_message = $e->getMessage();
         include('database_error.php');
         exit();
     }
 } else if ($action == 'delete_submission') {
-    $submission_id = filter_input(INPUT_POST, 'submission_id', FILTER_VALIDATE_INT);
-    $query = 'DELETE FROM form_submission WHERE submission_id = :submission_id';
-    $statement = $db->prepare($query);
-    $statement->bindValue(":submission_id", $submission_id);
-    $statement->execute();
-    $statement->closeCursor();
-    //echo $visit_id;
+    delSubmission($submission_id);
     header("Location: admin.php");
 }
 ?>
@@ -104,10 +77,12 @@ if ($action == 'list_submissions') {
                 </div>
                 <!-- Navigation links (hidden by default) -->
                 <div id="myLinks" class="">
-                    <li class="item"><a href="home.html #slideshow">Slideshow</a></li>
-                    <li class="item"><a href="home.html #newsletter">Newsletter</a></li>
-                    <li class="item"><a href="home.html #faqs">FAQs</a></li>
-                    <li class="item"><a href="home.html #contact">Contact</a></li>
+                   <li class="item"><a href="home.html">Slideshow</a></li>
+                    <li class="item"><a href="home.html">Newsletter</a></li>
+                    <li class="item"><a href="home.html">FAQs</a></li>
+                    <li class="item"><a href="contact.html">Contact</a></li>
+                    <li class="item"><a href="admin.php">Admin</a></li>
+                    <li class="item"><a href="list_volunteers.php">ListVol</a></li>
                 </div>  
             </ul>
         </nav>
@@ -149,7 +124,7 @@ if ($action == 'list_submissions') {
                                     <input type="hidden" name="action" value="delete_submission" />
                                     <input type="hidden" name="submission_id" 
                                            value="<?php echo $submission['submission_id']; ?>" />
-                                    <input type="submit" value="Delete" />
+                                    <input type="submit" value="Delete" class="button"/>
                                 </form>
                             </td>
                         </tr>

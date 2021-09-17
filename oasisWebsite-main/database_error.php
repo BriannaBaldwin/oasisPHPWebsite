@@ -2,10 +2,11 @@
 //Original Author: Brianna Baldwin
 //Date Created: 09/10/2021
 //Version: 0.0
-//Date Last Modified: 09/10/2021
+//Date Last Modified: 09/17/2021
 //Modified by: Brianna Baldwin
 //Modification log:
-//   09/03/2021 - created database_error.php
+//   09/10/2021 - created database_error.php
+//   09/17/2021 - Added nav links
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,10 +42,12 @@
                 </div>
                 <!-- Navigation links (hidden by default) -->
                 <div id="myLinks" class="">
-                    <li class="item"><a href="home.html #slideshow">Slideshow</a></li>
-                    <li class="item"><a href="home.html #newsletter">Newsletter</a></li>
-                    <li class="item"><a href="home.html #faqs">FAQs</a></li>
-                    <li class="item"><a href="home.html #contact">Contact</a></li>
+                    <li class="item"><a href="home.html">Slideshow</a></li>
+                    <li class="item"><a href="home.html">Newsletter</a></li>
+                    <li class="item"><a href="home.html">FAQs</a></li>
+                    <li class="item"><a href="contact.html">Contact</a></li>
+                    <li class="item"><a href="admin.php">Admin</a></li>
+                    <li class="item"><a href="list_volunteers.php">ListVol</a></li>
                 </div>  
             </ul>
         </nav>

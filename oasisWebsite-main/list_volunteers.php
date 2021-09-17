@@ -1,29 +1,35 @@
 <?php
 //Original Author: Brianna Baldwin
-//Date Created: 09/10/2021
+//Date Created: 09/15/2021
 //Version: 0.0
 //Date Last Modified: 09/17/2021
 //Modified by: Brianna Baldwin
 //Modification log:
-//   09/03/2021 - created error.php
-//   09/17/2021 - added nav links
+//   09/15/2021 - created list_volunteers.php | linked DB and collected data for first and last name
+//   09/17/2021 - moved database class to model/database.php | moved Volunteer and VolunteerDB to volunteer.php | added nav links
+
+require_once ('./model/database.php');
+require_once ('./model/volunteer.php');
+
+$volunteers = VolunteerDB::getVolunteers();
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
         <title>Contact Page</title>
-        <!-- Styles -->
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/contact.css">
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="img/favicon_io/favicon.ico">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
-        <link rel="icon" sizes="192x192" href="img/favicon_io/android-chrome-192x192.png">
-        <!-- JS Scripts -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!--Styles-->
+        <link rel = "stylesheet" href = "css/styles.css">
+        <link rel = "stylesheet" href = "css/contact.css">
+        <!--Favicon-->
+        <link rel = "shortcut icon" href = "img/favicon_io/favicon.ico">
+        <link rel = "icon" type = "image/png" sizes = "32x32" href = "img/favicon_io/favicon-32x32.png">
+        <link rel = "apple-touch-icon" sizes = "180x180" href = "img/favicon_io/apple-touch-icon.png">
+        <link rel = "icon" sizes = "192x192" href = "img/favicon_io/android-chrome-192x192.png">
+        <!--JS Scripts-->
+        <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script src="js/hambMenu.js"></script> <!-- JS for HambMenu -->
     </head>
@@ -55,11 +61,18 @@
     <body>
         <main><!-- Newsletter: 06.03, email_list -->
             <div id="contact" class="contact">
-                <main>
-                    <h2 class="top">Error</h2>
-                    <p><?php echo $error; ?></p>
-                </main>
+                <h1>Volunteer List</h1>
+                <p>
+                <ul>
+                    <?php foreach ($volunteers as $volunteer) : ?>
+                        <li>
+                            <?php echo $volunteer->getLastName() . ', ' . $volunteer->getFirstName(); ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                </p>
             </div>
+        </main>
     </body>
     <footer>
         <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
