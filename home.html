@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+Original Author: Brianna Baldwin
+Date Created: 01/27/2021
+Version: 0.0
+Date Last Modified: 09/17/2021
+Modified by: Brianna Baldwin
+Modification log:
+    01/27/2021 - Created home.html
+    01/28/2021 - added hamb to nav bar | inserted faq, contact and newsletter divs
+    01/29/2021 - linked buttons to external files | added functions to hamb menu/nav bar
+    include FAQ, Contact, and Newsletter Signup page w/js
+    02/02/2021 -  Added jquery script | added carousel
+    02/03/2021 - Got rid of carousel and added slideshow
+    02/05/2021 - Edited accordian to use jQuery UI
+    02/15/2021 - Added scroll to top button | edited nav bar for desktop/mobile views
+    02/17/2021 - Added mobile dolphin hambIcons | Added newsletter form 
+    09/17/2021 - Added nav links
+-->
+<html lang="en">
+
+    <head>
+        <title>Oasis - Clean Water, Happy Planet</title>
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/newsletter.css">
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta name="description" content="Learn about the importance of clean water and find a way to help!">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Oasis, Clean Water, Brianna Baldwin, Animals, Earth, People">
+        <meta name="author" content="Brianna Baldwin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="img/favicon_io/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="img/favicon_io/android-chrome-192x192.png">
+        <!-- JS Scripts -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> <!-- jQuery -->
+        <script type="text/javascript" src="js/script.js"></script> <!-- My JS File --> 
+        <script src="js/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script> <!-- jQuery UI-->
+        <script src="js/hambMenu.js"></script> <!-- JS for HambMenu -->
+        <script src="js/newsletter.js"></script> <!-- JS for Newsletter -->
+    </head>
+    <body>
+        <header>
+            <!-- <img src="img/drop.png" alt="Oasis Droplet Logo" height="30px" width="30px"> -->
+            <!-- Navbar -->
+            <nav>
+                <a id="pgTop"></a>
+                <ul class="topnav" id="myTopnav">
+                    <div>
+                        <!-- <img src="img/logo.png"> -->
+                        <li><a href="home.html" class="active" id="logo">Oasis</a></li>
+                        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                        <li><a href="javascript:void(0);" id="hambNav" class="hambNav" onclick="hambFunction()">
+                                <span><i class="fa fa-bars"><img id="hambImg" class="rotate" src="img/logo2.png"/></i></span>
+                            </a></li>
+                    </div>
+                    <!-- Navigation links (hidden by default) -->
+                    <div id="myLinks" class="">
+                        <li class="item"><a href="#slideshow">Slideshow</a></li>
+                        <li class="item"><a href="#newsletter">Newsletter</a></li>
+                        <li class="item"><a href="#faqs">FAQs</a></li>
+                        <li class="item"><a href="#contact">Contact</a></li>
+                        <li class="item"><a href="admin.php">Admin</a></li>
+                        <li class="item"><a href="list_volunteers.php">ListVol</a></li>
+                    </div>  
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Slideshow div -->
+            <div id="slideshow">
+                <h1>Clean Water, Happy Planet</h1>
+                <h2 id="caption">The difference between clean and dirty water</h2>
+                <img id="slide" src="img/girlHoldingWaterDesktop.png" alt="Girl holding one glass of clean water and one glasss of dirty water">
+                <div id="slides"> 
+                    <img src="img/fish.jpg" alt="Yellow fish enjoying a swim">
+                    <img src="img/seaTurtleBag.png" alt="This sea turtle has tried to eat a plastic bag">
+                    <img src="img/jellyfishes.png" alt="Jellyfish swimming in the dark">
+                    <img src="img/polarBear.png" alt="A Polar bear attempting to navigate without ice to walk on">
+                    <img src="img/girlHoldingWaterDesktop.png" alt="Girl holding one glass of clean water and one glasss of dirty water">
+                </div>
+            </div>
+
+            <!-- Newsletter div -->
+            <div class="newsletterParallax" id="newsletter1">
+                <div id="newsletter" class="newsletter">
+                    <h1>Join Our Newsletter</h1>
+                    <form id="email_form" name="email_form" 
+                          action="join.html" method="get">
+                        <div>
+                            <label for="email_1">Email Address:</label>
+                            <input type="text" id="email_1" name="email_1" class="textBox">
+                        </div>
+
+                        <div>
+                            <label for="email_2">Confirm Email Address:</label>
+                            <input type="text" id="email_2" name="email_2" class="textBox">
+                        </div>
+
+                        <div>
+                            <label for="full_name">Full Name:</label>
+                            <input type="text" id="full_name" name="full_name" class="textBox">
+                        </div>
+
+                        <div>
+                            <input type="button" id="join_list" value="Sign Up!" class="button">
+                        </div>     
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQs div | uses jQuery UI -->
+            <h1 id="faqs">Why Clean Water?</h1>
+            <div id="accordion" class="faqs">
+                <h3><a href="#">Preventing Climate Change</a></h3>
+                <div>
+                    <p>The ocean transports head form the equator to the poles, regulating climate
+                        and weather patterns. A filthy ocean causes rising waters and a changing
+                        ecosystem, changing the effects of climate change.
+                    </p>
+                    <span class="moreFacts"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis semper fermentum. Integer condimentum molestie lobortis.
+                            In hac habitasse platea dictumst. Pellentesque sodales commodo interdum. Integer a quam mauris. Nullam aliquet tristique enim nec rhoncus. Sed 
+                            rhoncus nulla tempor, congue nisi vitae, interdum ligula. Donec congue nunc vel ipsum aliquet, quis feugiat sem viverra. Cras ac ex fermentum, 
+                            hendrerit massa vel, aliquam urna. Nam ac magna lacinia, rhoncus mi eget, bibendum ex.</p></span>
+                </div>
+                <h3><a href="#">Clean Water for People</a></h3>
+                <div>
+                    <p>Contaminated water and poor sanitation have strong links to the
+                        transmission of life-threatening illnesses like cholera,
+                        diarrhea, dysentery, hepatitis A, and typhoid.
+                        These waterborne diseases that kill 3.4 million people every year</p>
+                    <span class="moreFacts"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis semper fermentum. Integer condimentum molestie lobortis.
+                            In hac habitasse platea dictumst. Pellentesque sodales commodo interdum. Integer a quam mauris. Nullam aliquet tristique enim nec rhoncus. Sed 
+                            rhoncus nulla tempor, congue nisi vitae, interdum ligula. Donec congue nunc vel ipsum aliquet, quis feugiat sem viverra. Cras ac ex fermentum, 
+                            hendrerit massa vel, aliquam urna. Nam ac magna lacinia, rhoncus mi eget, bibendum ex.</p></span>
+                </div>
+                <h3><a href="#">Keeping Ecosystems Healthy</a></h3>
+                <div>
+                    <p>When carbon is present in ocean water it creates carbonic
+                        acid which prevents coral reefs and mollusks from forming
+                        their calcium bicarbonate skeletons.
+                        This affects nemerous ecosystems around the world.
+                        Also turtles. Save the turtles.</p>
+                    <span class="moreFacts"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis semper fermentum. Integer condimentum molestie lobortis.
+                            In hac habitasse platea dictumst. Pellentesque sodales commodo interdum. Integer a quam mauris. Nullam aliquet tristique enim nec rhoncus. Sed 
+                            rhoncus nulla tempor, congue nisi vitae, interdum ligula. Donec congue nunc vel ipsum aliquet, quis feugiat sem viverra. Cras ac ex fermentum, 
+                            hendrerit massa vel, aliquam urna. Nam ac magna lacinia, rhoncus mi eget, bibendum ex.</p></span>
+                </div>
+            </div>
+
+            <!-- Contact div -->
+            <div class="contactParallax" id="contact">
+                <h1><br>Want to know how you can help?<br>Contact Us!</h1>
+                <a href="contact.html"><input type="button" id="contact_button" value="Contact"></a>
+            </div>
+        </main>
+        <footer>
+            <a href="#pgTop"><input type="button" id="top_button" value="Back to Top"></a>
+            <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
+                <p>Insperation from WaterAid.com</p>
+                <p>&copy; Copyright 2021. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
+
