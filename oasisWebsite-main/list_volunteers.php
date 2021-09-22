@@ -2,13 +2,15 @@
 //Original Author: Brianna Baldwin
 //Date Created: 09/15/2021
 //Version: 0.0
-//Date Last Modified: 09/17/2021
+//Date Last Modified: 09/22/2021
 //Modified by: Brianna Baldwin
 //Modification log:
 //   09/15/2021 - created list_volunteers.php | linked DB and collected data for first and last name
 //   09/17/2021 - moved database class to model/database.php | moved Volunteer and VolunteerDB to volunteer.php | added nav links
-
+//   09/22/2021 - Added authentication and secure connection
 require_once ('./model/database.php');
+require_once ('./util/secure_conn.php');
+require_once ('./util/valid_admin.php');
 require_once ('./model/volunteer.php');
 
 $volunteers = VolunteerDB::getVolunteers();

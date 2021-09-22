@@ -2,13 +2,15 @@
 //Original Author: Brianna Baldwin
 //Date Created: 09/10/2021
 //Version: 0.0
-//Date Last Modified: 09/10/2021
+//Date Last Modified: 09/22/2021
 //Modified by: Brianna Baldwin
 //Modification log:
 //   09/10/2021 - created admin.php | added php to collect and post messages for each assigned volunteer | added option to delete messages
 //   09/17/2021 - linked model database.php and volunteer.php files | deleted database link | add volunteer and visit functions | added nav links
-
+//   09/22/2021 - Added authentication and secure connection
 require_once ('./model/database.php');
+require_once ('./util/secure_conn.php');
+require_once ('./util/valid_admin.php');
 require_once ('./model/volunteer.php');
 require_once ('./model/submission.php');
 
@@ -77,7 +79,7 @@ if ($action == 'list_submissions') {
                 </div>
                 <!-- Navigation links (hidden by default) -->
                 <div id="myLinks" class="">
-                   <li class="item"><a href="home.html">Slideshow</a></li>
+                    <li class="item"><a href="home.html">Slideshow</a></li>
                     <li class="item"><a href="home.html">Newsletter</a></li>
                     <li class="item"><a href="home.html">FAQs</a></li>
                     <li class="item"><a href="contact.html">Contact</a></li>
