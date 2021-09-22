@@ -31,6 +31,15 @@ CREATE TABLE IF NOT EXISTS form_submission
 	volunteer_id	INT NOT NULL,
 	FOREIGN KEY (volunteer_id) REFERENCES volunteer(volunteer_id)
 );
+
+CREATE TABLE IF NOT EXISTS administrators (
+  adminID           INT            NOT NULL   AUTO_INCREMENT,
+  emailAddress      VARCHAR(255)   NOT NULL,
+  password          VARCHAR(255)   NOT NULL,
+  firstName         VARCHAR(60),
+  lastName          VARCHAR(60),
+  PRIMARY KEY (adminID)
+);
 # insert statements for volunteer table
 INSERT INTO volunteer
 	(first_name, last_name, email_address)

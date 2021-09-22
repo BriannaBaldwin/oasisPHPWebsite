@@ -26,7 +26,7 @@ if ($email_address == null || $phone == null || $country_selected == null ||
         $terms == null || $comments == null) {
     $error = "Invalid input data. Check all fields and try again.";
     include('error.php');
-//    echo "Form Data Error: " . $error;
+    //echo "Form Data Error: " . $error;
     exit();
 } else {
     require_once ('./model/database.php');
