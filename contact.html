@@ -1,0 +1,130 @@
+
+<!-- Contact: 06-02, register 2.0 -->
+<!-- Original Author: Brianna Baldwin
+Date Created: 01/28/2021
+Version: 0.0
+Date Last Modified: 09/17/2021
+Modified by: Brianna Baldwin
+Modification log:
+   01/28/2021 - created contact.html
+   01/29/2021 - added form, nav bar, and footer from home.html to file | made edits to id/class names for .js files
+   02/03/2021 - Edited nav links so they return to home page
+   02/15/2021 - Edited nav bar for desktop/mobile views
+   02/17/2021 - Added mobile dolphin hambIcons | edited footer | edited form design/function
+   09/03/2021 - Edited form to post info to thankyou.php for database 
+   09/17/2021 - Added nav links
+   09/24/2021 - Added validation to input fields
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact Page</title>
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="img/favicon_io/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="img/favicon_io/android-chrome-192x192.png">
+        <!-- JS Scripts -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="js/hambMenu.js"></script> <!-- JS for HambMenu -->
+    </head>
+    <header>
+        <!-- <img src="img/drop.png" alt="Oasis Droplet Logo" height="30px" width="30px"> -->
+        <!-- Navbar -->
+        <nav>
+            <a name="top"></a>
+            <ul class="topnav" id="myTopnav">
+                <div>
+                    <li><a href="home.html" class="active">Oasis</a></li>
+                    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                    <li><a href="javascript:void(0);" id="hambNav" class="hambNav" onclick="hambFunction()">
+                            <span><i class="fa fa-bars"><img id="hambImg" class="rotate" src="img/logo2.png"/></i></span>
+                        </a></li>
+                </div>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks" class="">
+                    <li class="item"><a href="home.html">Slideshow</a></li>
+                    <li class="item"><a href="home.html">Newsletter</a></li>
+                    <li class="item"><a href="home.html">FAQs</a></li>
+                    <li class="item"><a href="contact.html">Contact</a></li>
+                    <li class="item"><a href="admin.php">Admin</a></li>
+                    <li class="item"><a href="list_volunteers.php">ListVol</a></li>
+                </div>  
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <main><!-- Newsletter: 06.03, email_list -->
+            <div id="contact" class="contact">
+                <h1>Contact Us</h1>
+                <form id="contact_form" action="thankyou.php" method="post" class="contact_container">
+                    <fieldset>
+                        <div>
+                            <label for="email_address">E-Mail:</label>
+                            <input type="email" name="email_address" id="email_address" 
+                                   placeholder="janedoe@email.com" class="textBox" 
+                                   pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" required>
+                        </div>
+                        <div>
+                            <label for="phone">Mobile Phone:</label>
+                            <input type="tel" name="phone" id="phone" 
+                                   placeholder="000-111-2222" class="textBox" 
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        </div>
+                        <div class="country_selected">
+                            <label for="country_selected" id="csLabel">Country:</label>
+                            <select name="country_selected" id="country_selected" required>
+                                <option value="">Select a country</option>
+                                <option value="usa">USA</option>
+                                <option value="canada">Canada</option>
+                                <option value="mexico">Mexico</option>
+                            </select>
+
+                        </div>
+                        
+                            <div class="radio_buttons">
+                                <label for="radio">Contact me by:</label><br>
+                                <input type="radio" name="contact" id="text"
+                                       value="text" checked>Text<br>
+                                <input type="radio" name="contact" id="email"
+                                       value="email">Email<br>
+                                <input type="radio" name="contact" id="mobile"
+                                       value="mobile">Mobile phone<br>
+                                <input type="radio" name="contact" id="noContact"
+                                       value="noContact">Don't contact me<br>
+                            </div>
+                            <div class="terms">
+                                <label>Terms of Service:</label><br>
+                                <input type="checkbox" name="terms" id="terms"
+                                       value="yes" required>I accept
+
+                            </div>
+                       
+                        <div>
+                            <label for="comments">Comments:</label>
+                            <textarea name="comments" id="comments" 
+                                      placeholder="Go on, we're listening..." required></textarea>
+
+                        </div>
+                        <div class="button_container">
+                            <!--  <input type="button" id="submit_form" value="Submit" class="button"> -->
+                            <input type='submit' value='Submit' class="button">
+                            <input type="reset" id="reset_form" value="Reset" class="button">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+    </body>
+    <footer>
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
+            <p>Inspiration from <a href="https://us.wateraid.org/campaign/emergency-global-hygiene-fund/c277193?c_src=ig-dig-20b-cvd&c_src2=bra-7&gclid=Cj0KCQiAjKqABhDLARIsABbJrGl53kVQKVAFT1Pg7v0M06_lnRx8zaOuMVF8BXxjtwbCUdUS9H8XtvwaAt1cEALw_wcB"> WaterAid.com</a></p>
+            <p>&copy; Copyright 2021. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>
