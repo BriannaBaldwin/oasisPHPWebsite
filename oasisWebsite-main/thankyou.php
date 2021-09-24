@@ -1,8 +1,12 @@
 <?php
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Date Created: 09/17/2021
+Version: 0.0
+Date Last Modified: 09/24/2021
+Modified by: Brianna Baldwin
+Modification log:
+   09/17/2021 - created thankyou.php
+   09/24/2021 - Added validation for inputs
  */
 $email_address = trim(filter_input(INPUT_POST, 'email_address'));
 $phone = trim(filter_input(INPUT_POST, 'phone'));
