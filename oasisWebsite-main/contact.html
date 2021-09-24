@@ -1,3 +1,4 @@
+
 <!-- Contact: 06-02, register 2.0 -->
 <!-- Original Author: Brianna Baldwin
 Date Created: 01/28/2021
@@ -60,30 +61,32 @@ Modification log:
         <main><!-- Newsletter: 06.03, email_list -->
             <div id="contact" class="contact">
                 <h1>Contact Us</h1>
-                <form action="thankyou.php" method="post" class="contact_container">
+                <form id="contact_form" action="thankyou.php" method="post" class="contact_container">
                     <fieldset>
-                        <li>
+                        <div>
                             <label for="email_address">E-Mail:</label>
-                            <input type="text" name="email_address" id="email_address" placeholder="janedoe@email.com" class="textBox">
-                            <span>*</span>
-                        </li>
-                        <li>
+                            <input type="email" name="email_address" id="email_address" 
+                                   placeholder="janedoe@email.com" class="textBox" 
+                                   pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" required>
+                        </div>
+                        <div>
                             <label for="phone">Mobile Phone:</label>
-                            <input type="text" name="phone" id="phone" placeholder="000-111-2222" class="textBox">
-                            <span>*</span>
-                        </li>
-                        <li class="country_selected">
+                            <input type="tel" name="phone" id="phone" 
+                                   placeholder="000-111-2222" class="textBox" 
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        </div>
+                        <div class="country_selected">
                             <label for="country_selected" id="csLabel">Country:</label>
-                            <select name="country_selected" id="country_selected">
+                            <select name="country_selected" id="country_selected" required>
                                 <option value="">Select a country</option>
                                 <option value="usa">USA</option>
                                 <option value="canada">Canada</option>
                                 <option value="mexico">Mexico</option>
                             </select>
-                            <span>*</span>
-                        </li>
-                        <div class="flex-container">
-                            <div class="flex-child radio_buttons">
+
+                        </div>
+                        
+                            <div class="radio_buttons">
                                 <label for="radio">Contact me by:</label><br>
                                 <input type="radio" name="contact" id="text"
                                        value="text" checked>Text<br>
@@ -94,22 +97,23 @@ Modification log:
                                 <input type="radio" name="contact" id="noContact"
                                        value="noContact">Don't contact me<br>
                             </div>
-                            <div class="flex-child terms">
+                            <div class="terms">
                                 <label>Terms of Service:</label><br>
                                 <input type="checkbox" name="terms" id="terms"
-                                       value="yes">I accept
-                                <span>*</span>
+                                       value="yes" required>I accept
+
                             </div>
-                        </div>
-                        <li>
+                       
+                        <div>
                             <label for="comments">Comments:</label>
-                            <textarea name="comments" id="comments" placeholder="Go on, we're listening..."></textarea>
-                            <span>*</span>
-                        </li>
+                            <textarea name="comments" id="comments" 
+                                      placeholder="Go on, we're listening..." required></textarea>
+
+                        </div>
                         <div class="button_container">
                             <!--  <input type="button" id="submit_form" value="Submit" class="button"> -->
                             <input type='submit' value='Submit' class="button">
-                            <input type="button" id="reset_form" value="Reset" class="button">
+                            <input type="reset" id="reset_form" value="Reset" class="button">
                         </div>
                     </fieldset>
                 </form>

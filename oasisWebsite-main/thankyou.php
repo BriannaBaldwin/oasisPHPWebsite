@@ -1,14 +1,11 @@
 <?php
-//Original Author: Brianna Baldwin
-//Date Created: 09/03/2021
-//Version: 0.0
-//Date Last Modified: 09/17/2021
-//Modified by: Brianna Baldwin
-//Modification log:
-//   09/03/2021 - created thankyou.php | added php to collect and validate form data into database
-//   09/17/2021 - Use database class & visit function 
-$email_address = filter_input(INPUT_POST, 'email_address');
-$phone = filter_input(INPUT_POST, 'phone');
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+$email_address = trim(filter_input(INPUT_POST, 'email_address'));
+$phone = trim(filter_input(INPUT_POST, 'phone'));
 $country_selected = filter_input(INPUT_POST, 'country_selected');
 $contact = filter_input(INPUT_POST, 'contact');  // not required
 $terms = filter_input(INPUT_POST, 'terms');
@@ -18,21 +15,20 @@ if (isset($terms)) {
 } else {
     $terms = '0';
 }
-$comments = filter_input(INPUT_POST, 'comments');
+$comments = trim(filter_input(INPUT_POST, 'comments'));
 /* echo "Fields: " . $visitor_name . $visitor_email . $visitor_msg;  */
 
 // Validate inputs
 if ($email_address == null || $phone == null || $country_selected == null ||
         $terms == null || $comments == null) {
     $error = "Invalid input data. Check all fields and try again.";
-    include('error.php');
-    //echo "Form Data Error: " . $error;
+    include ('error.php');
+//echo "Form Data Error: " . $error;
     exit();
 } else {
     require_once ('./model/database.php');
     require_once ('./model/submission.php');
     addSubmission($email_address, $phone, $country_selected, $contact, $terms, $comments);
-   
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +36,7 @@ if ($email_address == null || $phone == null || $country_selected == null ||
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Contact Page</title>
+        <title>Thank You</title>
         <!-- Styles -->
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/contact.css">

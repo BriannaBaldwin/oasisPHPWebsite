@@ -13,6 +13,7 @@ require_once ('./util/secure_conn.php');
 require_once ('./util/valid_admin.php');
 require_once ('./model/volunteer.php');
 require_once ('./model/submission.php');
+//require_once ('./model/logout.php');
 
 //Check action; on initial load it is null
 $action = filter_input(INPUT_POST, 'action');
@@ -50,7 +51,7 @@ if ($action == 'list_submissions') {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Contact Page</title>
+        <title>Admin Page</title>
         <!-- Styles -->
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/contact.css">
@@ -85,6 +86,7 @@ if ($action == 'list_submissions') {
                     <li class="item"><a href="contact.html">Contact</a></li>
                     <li class="item"><a href="admin.php">Admin</a></li>
                     <li class="item"><a href="list_volunteers.php">ListVol</a></li>
+<!--                    <li class="item"><a href="admin.php?action=logout">Logout</a></li>-->
                 </div>  
             </ul>
         </nav>
